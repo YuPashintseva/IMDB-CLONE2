@@ -1,0 +1,6 @@
+{
+    "port": 5000,
+    "jwtSecret": "yuliya",
+    "mongoUri": "mongodb+srv://yuliya:12345@cluster0.eq9af.mongodb.net/app?retryWrites=true&w=majority",
+    "baseUrl": "http://localhost:5000"
+}
