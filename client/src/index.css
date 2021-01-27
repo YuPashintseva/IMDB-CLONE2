@@ -10,7 +10,7 @@ body {
 }
 
 .films-list {
-    width: 65%;
+    width: 60%;
     margin-top: 4%;
   }
 .main-modal .modal-content {
@@ -260,10 +260,7 @@ code {
     background-color: #1a1a1a;
     width: 100%;
   }
-  .films-list {
-    width: 65%;
-    margin-top: 4%;
-  }
+
   .carousel-item-padding {
     padding: 10px;
   }
@@ -444,6 +441,7 @@ code {
 
   #toast-container .toast {
     color: black;
+    padding: 1%;
   }
 
   .film-list {
@@ -452,7 +450,6 @@ code {
 
   .card {
     align-items: center;
-
     background-color: black;
   }
 
@@ -469,4 +466,17 @@ code {
     display: flex;
     justify-content: space-between;
     margin-bottom: 1rem;
+    padding: 1rem;
+  }
+
+  .navbar-nav a{
+    text-decoration: none;
+    color: #f5c518;
+    margin-left: 4.5rem;
+  }
+
+  .navbar-nav a:hover{
+    text-decoration: none;
+    cursor: pointer;
+    color: white;
   }

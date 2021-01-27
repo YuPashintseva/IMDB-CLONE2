@@ -17,7 +17,7 @@ function App() {
     }}>
       <Router>
         { isAuthenticated && <Navbar />}
-        <div id="fl" className="film-list" style={{width:'65%', marginLeft:'12%'}}>
+        <div id="fl" className="film-list" style={{marginLeft:'5%', marginRight:'5%'}}>
           {routes}
         </div>
       </Router>

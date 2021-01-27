@@ -19,10 +19,10 @@ export const Navbar = () => {
           <div className="main-img-wrapper"><img className="navbar-mainlogo" src={mainLogo} ></img></div>
         </MyBar.Brand>
         <Nav className="mr-auto">
-          <Nav.Link href="/">Home</Nav.Link>
-          <Nav.Link href="#features">Watchlist</Nav.Link>
-          <Nav.Link href="#features">Statistic</Nav.Link>
-          <Nav.Link href="#features" onClick={logoutHandler}>Log out</Nav.Link>
+          <NavLink to="/">Home</NavLink>
+          <NavLink to="/links">Watchlist</NavLink>
+          <NavLink to="/statistic">Statistic</NavLink>
+          <NavLink to="/" onClick={logoutHandler}>Log out</NavLink>
         </Nav>
       </MyBar>
     )
