@@ -2,6 +2,9 @@ import React, {useState, useEffect, useContext} from 'react';
 import { AuthContext } from '../context/AuthContext';
 import {useHttp} from '../hooks/http.hook';
 import {useMessage} from '../hooks/message.hook';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Card, Button } from 'react-bootstrap'
+
 
 export const AuthPage = () => {
     const auth = useContext(AuthContext);
@@ -45,42 +48,37 @@ export const AuthPage = () => {
     }
 
     return (
-        <div className="row">
-            <div className="col s6 offset-s3">
-                <h1> IMDB CLONE</h1>
-                <div className="card blue darken-1">
-                    <div className="card-content white-text">
-                    <span className="card-title">Authorization</span>
-                        <div>
-                        <div className="input-field">
-                            <input placeholder="Email" id="email" type="text" name="email" value={form.email} onChange={changeHandler}/>
-                            <label htmlFor="email">Email</label>
-                        </div>
-                        <div className="input-field">
-                            <input placeholder="Password" id="password" type="password" name="password" value={form.password} onChange={changeHandler}/>
-                            <label htmlFor="password">Password</label>
-                        </div>
-                        </div>
+
+        <Card className="bg-dark text-white">
+            <Card.Body>
+                <Card.Title><h1>IMDB CLONE</h1></Card.Title>
+                <div>
+                    <div className="input-field">
+                        <label className="reg-lbl" htmlFor="email" >Email</label>
+                        <input placeholder="Email" id="email" type="text" name="email" value={form.email} onChange={changeHandler}/>
                     </div>
-                    <div className="card-action">
-                        <button 
-                            className="btn yellow darken-4" 
-                            style={{marginRight: 10}}
+                    <div className="input-field">
+                        <label className="reg-lbl" htmlFor="password">Password</label>
+                        <input placeholder="Password" id="password" type="password" name="password" value={form.password} onChange={changeHandler}/>
+                    </div>
+                </div>
+
+                <div className="card-action">
+                        <Button variant="warning"
                             onClick={loginHandler}
                             disabled={loading}
                         >
                             Log In
-                        </button>
-                        <button 
-                            className="btn grey lighten-1 black-text"
+                        </Button>{' '}
+                        <Button variant="warning"
                             onClick={registerHandler}
                             disabled={loading}
                         >
                             Registration
-                        </button>
+                        </Button>{' '}
                     </div>
-                </div>
-            </div>
-        </div>
+            </Card.Body>
+        </Card>
+        
     )
 }

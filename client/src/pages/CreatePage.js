@@ -22,8 +22,7 @@ export const CreatePage = () => {
         }
     }
     return (
-        <div className="row">
-            <MainCarousel />
-        </div>
+
+        <MainCarousel />
     )
 }

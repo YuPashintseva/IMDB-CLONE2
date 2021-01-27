@@ -5,6 +5,7 @@ import {useRoutes} from './routes';
 import {useAuth} from './hooks/auth.hook';
 import {AuthContext} from './context/AuthContext';
 import { Navbar } from './components/Navbar';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   const {token, login, logout, userId} = useAuth();

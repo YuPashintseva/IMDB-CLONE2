@@ -1,10 +1,12 @@
 import React from 'react';
 import Carousel from "react-multi-carousel";
-import star from './assets/star.png'
-import play from './assets/play.png'
+import ModalWindow from './ModalWindow';
+import star from './assets/star.png';
+import play from './assets/play.png';
 import info from './assets/info-grey.png';
 import 'react-multi-carousel/lib/styles.css';
-
+import 'bootstrap/dist/css/bootstrap.min.css';
+import CaurouselMain from './CaurouselMain';
 import {
     BrowserRouter as Router,
     Switch,
@@ -63,10 +65,12 @@ export class MainCarousel extends React.Component {
     render() {
         let mod = '';
         if (this.state.data.results) {
+            if (this.state.showHide) {
+                mod = <ModalWindow handleModalShowHide = {this.handleModalShowHide2} filmInfo = {this.state.currFilmInfo} toWatchList={this.state.showAlert} />
+            }
             return (
                 <div>
-               
-
+                <CaurouselMain type={"films"} />
                 <div className="head-text">
                     What to watch
                 </div>
@@ -136,7 +140,7 @@ export class MainCarousel extends React.Component {
             <div className="head-text">
                 Popular people
             </div>
-            
+            <CaurouselMain type={"people"} />
             </div>
             );
         } else {

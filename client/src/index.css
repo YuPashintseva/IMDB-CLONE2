@@ -1,6 +1,9 @@
 
-@import "~materialize-css/dist/css/materialize.min.css";
+/*@import "~materialize-css/dist/css/materialize.min.css";*/
 
+#root {
+  background-color: black;
+}
 
 body {
     background-color: black;
@@ -432,4 +435,38 @@ code {
     font-size: 3rem;
   }
   }
-  
+  #toast-container {
+    background-color: black;
+    height: 20px;
+    padding-left: 40%;
+    padding-top: 2%;
+  }
+
+  #toast-container .toast {
+    color: black;
+  }
+
+  .film-list {
+    margin-top: 4rem;
+  }
+
+  .card {
+    align-items: center;
+
+    background-color: black;
+  }
+
+  .reg-lbl {
+    margin-right: 2rem;
+  }
+
+  .card-action {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .input-field {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+  }
