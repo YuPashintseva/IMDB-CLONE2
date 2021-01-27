@@ -16,7 +16,7 @@ function App() {
     }}>
       <Router>
         { isAuthenticated && <Navbar />}
-        <div className="container">
+        <div id="fl" className="film-list" style={{width:'65%', marginLeft:'12%'}}>
           {routes}
         </div>
       </Router>

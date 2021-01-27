@@ -1,6 +1,7 @@
 import React, {useCallback, useContext} from 'react';
 import {NavLink, useHistory} from 'react-router-dom';
 import { AuthContext } from '../context/AuthContext';
+
 export const Navbar = () => {
     const history = useHistory()
     const auth = useContext(AuthContext);
@@ -21,6 +22,8 @@ export const Navbar = () => {
             </ul>
             </div>
         </nav>
+        
+        
     )
 }
 

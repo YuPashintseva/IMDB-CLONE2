@@ -1,6 +1,7 @@
 import React, {useContext, useEffect, useState} from 'react';
 import { AuthContext } from '../context/AuthContext';
 import {useHttp} from '../hooks/http.hook';
+import {MainCarousel} from '../components/MainCarousel';
 
 export const CreatePage = () => {
     const auth = useContext(AuthContext);
@@ -15,7 +16,6 @@ export const CreatePage = () => {
              const data = await request('/api/link/generate', 'POST', {from: link}, {
                  Authorization: `Bearer ${auth.token}`
              });
-             console.log(data)
             } catch (e) {
                 
             }
@@ -23,18 +23,7 @@ export const CreatePage = () => {
     }
     return (
         <div className="row">
-            <div className="col s8 offset-s2" style={{paddingTop: '2rem'}}>
-            <div className="input-field">
-                <input 
-                    placeholder="Put the link" 
-                    id="link" 
-                    type="text" 
-                    onChange={e => setLink(e.target.value)}
-                    onKeyPress ={pressHandler}
-                />
-                <label htmlFor="link">Put the link</label>
-            </div>
-            </div>
+            <MainCarousel />
         </div>
     )
 }
