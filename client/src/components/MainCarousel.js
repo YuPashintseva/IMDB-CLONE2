@@ -62,6 +62,25 @@ export class MainCarousel extends React.Component {
         this.setState({ showHide: !this.state.showHide });
     }
 
+    interestedCount(title) {
+        if(localStorage.getItem('count')){
+            let obj = JSON.parse(localStorage.getItem('count'));
+            if(obj[title]) {
+                obj[title] = parseInt(obj[title])+1;
+            }else {
+                obj[title] = 1;
+            }
+            //localStorage.clear();
+            localStorage.setItem('count', JSON.stringify(obj));
+        }
+        else {
+            let obj ={};
+            obj[title] = 1;
+            localStorage.setItem('count', JSON.stringify(obj));
+        }
+    }
+
+
     render() {
         let mod = '';
         if (this.state.data.results) {
@@ -102,9 +121,9 @@ export class MainCarousel extends React.Component {
            
                     <div className="films-list-img App-link" >
                     
-                    <Link style={{ textDecoration: 'none', color: 'white' }} to= "/FilmPage" > 
-                        <img className="poster-img" onClick={()=>this.interestedCount(el.original_title)} onMouseOver={()=> {sessionStorage.removeItem("val");sessionStorage.setItem("val",JSON.stringify(el))}}  src={`https://image.tmdb.org/t/p/original/${el.poster_path}`} alt={el.title}/>
-                    </Link>    
+                        <Link style={{ textDecoration: 'none', color: 'white' }} to= "/FilmPage" > 
+                            <img className="poster-img" onClick={()=>this.interestedCount(el.original_title)} onMouseOver={()=> {sessionStorage.removeItem("val");sessionStorage.setItem("val",JSON.stringify(el))}}  src={`https://image.tmdb.org/t/p/original/${el.poster_path}`} alt={el.title}/>
+                        </Link>    
                         
                         <div className="bottom-content-wrapper">
                             <div className="rating">
@@ -113,7 +132,7 @@ export class MainCarousel extends React.Component {
                                   <img className = "star" src={star} alt="star icon" />
                                     <div className="vote_average">{el.vote_average}</div>
                                 </div>
-                                <div className="like-film">Like this film</div>
+                                
                             </div>
                            <Link style={{ textDecoration: 'none', color: 'white' }} to= "/FilmPage">
                                 <div className="film-title" onClick={()=>this.interestedCount(el.original_title)} onMouseOver={()=>{ sessionStorage.removeItem("val");sessionStorage.setItem("val",JSON.stringify(el))}}>{el.title}</div>

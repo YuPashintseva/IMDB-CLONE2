@@ -5,12 +5,13 @@ import {CreatePage} from './pages/CreatePage';
 import {DetailPage} from './pages/DetailPage';
 import {AuthPage} from './pages/AuthPage';
 import { StatisticPage } from './pages/StatisticPage';
+import FilmPage from './components/FilmPage';
 
 export const useRoutes = isAuthenticted => {
     if (isAuthenticted) {
         return (
             <Switch>
-                <Route path="/links" exact>
+                <Route path="/watchlist" exact>
                     <LinksPage />
                 </Route>
                 <Route path="/create" exact>
@@ -18,6 +19,9 @@ export const useRoutes = isAuthenticted => {
                 </Route>
                 <Route path="/statistic" exact>
                     <StatisticPage />
+                </Route>
+                <Route path="/FilmPage">
+                    <FilmPage />
                 </Route>
                 <Route path="/detail:id">
                     <DetailPage />

@@ -4,7 +4,8 @@ import 'materialize-css';
 import {useRoutes} from './routes';
 import {useAuth} from './hooks/auth.hook';
 import {AuthContext} from './context/AuthContext';
-import { Navbar } from './components/Navbar';
+import  {Navbar}  from './components/Navbar';
+import  Footer  from './components/Footer';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
         <div id="fl" className="film-list" style={{marginLeft:'5%', marginRight:'5%'}}>
           {routes}
         </div>
+        { isAuthenticated && <Footer />}
       </Router>
     </AuthContext.Provider>
   );

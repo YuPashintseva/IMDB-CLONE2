@@ -20,7 +20,7 @@ export const Navbar = () => {
         </MyBar.Brand>
         <Nav className="mr-auto">
           <NavLink to="/">Home</NavLink>
-          <NavLink to="/links">Watchlist</NavLink>
+          <NavLink to="/watchlist">Watchlist</NavLink>
           <NavLink to="/statistic">Statistic</NavLink>
           <NavLink to="/" onClick={logoutHandler}>Log out</NavLink>
         </Nav>
